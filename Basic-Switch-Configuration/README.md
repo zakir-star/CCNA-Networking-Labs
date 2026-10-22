@@ -19,8 +19,6 @@
 |--------|-----------|--------------|-------|
 | SW1 | Fa0/1 | PC1 (FastEthernet0) | Copper straight-through cable |
 | SW1 | Fa0/2 | PC2 (FastEthernet0) | Copper straight-through cable |
-| PC1 | NIC | SW1 Fa0/1 | 192.168.1.10 / 255.255.255.0 |
-| PC2 | NIC | SW1 Fa0/2 | 192.168.1.20 / 255.255.255.0 |
 
 ## ⚙️ Configuration
 
