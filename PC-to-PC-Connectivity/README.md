@@ -9,7 +9,7 @@
 
 ## 🖼️ Lab Topology
 
-![Topology](SW1.png)
+![Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/PC-to-PC-Connectivity/PC-to-PC-Connectivity.png?raw=true)
 
 ## 📋 Device Interface Table
 
