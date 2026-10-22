@@ -1,4 +1,4 @@
-# 🖧 LAB: Basic Switch Configuration
+# 🔌 LAB: Basic Switch Configuration
 
 ## 🎯 Objective
 
@@ -26,72 +26,49 @@
 
 ### SW1 Configuration
 
-Enter privileged EXEC mode and global configuration mode
+**Enter privileged EXEC mode and global configuration mode**  
+Switch> enable  
+Switch# configure terminal  
 
-```
-Switch> enable
-Switch# configure terminal
-```
+**Change the hostname**  
+Switch(config)# hostname SW1  
 
-Change the hostname
+**Set the enable password**  
+SW1(config)# enable secret Cisco123  
 
-```
-Switch(config)# hostname SW1
-```
+**Set the console line password**  
+SW1(config)# line console 0  
+SW1(config-line)# password Console123  
+SW1(config-line)# login  
+SW1(config-line)# exit  
 
-Set the enable password
-
-```
-SW1(config)# enable secret Cisco123
-```
-
-Set the console line password
-
-```
-SW1(config)# line console 0
-SW1(config-line)# password Console123
-SW1(config-line)# login
-SW1(config-line)# exit
-```
-
-Save the configuration
-
-```
-SW1(config)# end
-SW1# copy running-config startup-config
-```
+**Save the configuration**  
+SW1(config)# end  
+SW1# copy running-config startup-config  
 
 ## ✅ Verification
 
-Check the configuration
+**Check the configuration**  
+SW1# show running-config  
 
-```
-SW1# show running-config
-```
+**Check that the ports are up**  
+SW1# show interfaces status  
 
-Check that the ports are up
+**Test the console and enable passwords**  
+Exit the CLI and log in again. SW1 should ask for the console password.  
+Type enable. SW1 should ask for the enable password.  
 
-```
-SW1# show interfaces status
-```
-
-Test the console and enable passwords
-
-- Exit the CLI and log in again. SW1 should ask for the console password.
-- Type `enable`. SW1 should ask for the enable password.
-
-Test connectivity
-
-- From PC1, run `ping 192.168.1.20`. The ping should succeed.
+**Test connectivity**  
+From PC1, ping 192.168.1.20. The ping should succeed.  
 
 ## 🛠️ Troubleshooting
 
 | Issue | Fix |
 |-------|-----|
-| Console password is not asked | Make sure the `login` command is configured under `line console 0` |
+| Console password is not asked | Make sure the login command is configured under line console 0 |
 | Ping between PCs fails | Check the IP addresses and subnet masks on both PCs |
 | Switch ports are not green | Check the cables and wait for the ports to come up |
-| Configuration is lost after reload | Save it with `copy running-config startup-config` |
+| Configuration is lost after reload | Save it with copy running-config startup-config |
 
 ## 🌍 Real-World Use Case
 
@@ -114,6 +91,6 @@ Test connectivity
 
 - Prepared and documented by **Zakir Hussain** for CCNA lab practice and GitHub repository organization.
 
-## 🏁 Closing
+## ✅ Closing
 
 - Thank you for reviewing this lab. Hands-on practice is the best way to learn networking.
