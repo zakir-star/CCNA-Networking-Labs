@@ -56,9 +56,6 @@ SW1# show interfaces status
 Exit the CLI and log in again. SW1 should ask for the console password.  
 Type enable. SW1 should ask for the enable password.  
 
-**Test connectivity**  
-From PC1, ping 192.168.1.20. The ping should succeed.  
-
 ## 🛠️ Troubleshooting
 
 | Issue | Fix |
