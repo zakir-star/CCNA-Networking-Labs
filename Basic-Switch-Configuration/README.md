@@ -64,7 +64,6 @@ From PC1, ping 192.168.1.20. The ping should succeed.
 | Issue | Fix |
 |-------|-----|
 | Console password is not asked | Make sure the login command is configured under line console 0 |
-| Ping between PCs fails | Check the IP addresses and subnet masks on both PCs |
 | Switch ports are not green | Check the cables and wait for the ports to come up |
 | Configuration is lost after reload | Save it with copy running-config startup-config |
 
@@ -79,11 +78,10 @@ From PC1, ping 192.168.1.20. The ping should succeed.
 - Hostname of the switch changed to SW1.
 - Enable password configured for privileged EXEC mode.
 - Console line password configured.
-- Verified connectivity between PC1 and PC2.
 
 ## 🙏 Acknowledgment
 
-- This lab is part of my CCNA 200-301 practice series. Thank you for taking the time to go through it.
+- This lab is part of my CCNA practice series. Thank you for taking the time to go through it.
 
 ## ✍️ Author's Note
 
