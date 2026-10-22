@@ -10,7 +10,7 @@
 
 ## 🖼️ Lab Topology
 
-![Topology](SW1.png)
+![Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/Basic-Switch-Configuration/SW1.png?raw=true)
 
 
 ## 📋 Device Interface Table
