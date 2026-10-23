@@ -11,7 +11,7 @@
 
 ![VLAN Configuration Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/VLAN-Configuration/VLAN-Configuration.png?raw=true)
 
-[Download the Packet Tracer file](VLAN-Configuration.pkt)
+[⬇️ Download the Packet Tracer file](https://github.com/zakir-star/CCNA-Networking-Labs/raw/refs/heads/main/VLAN-Configuration/VLAN-Configuration.pkt)
 
 ## 📋 Device Interface Table
 
