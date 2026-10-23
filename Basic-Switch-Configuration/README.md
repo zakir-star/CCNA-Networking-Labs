@@ -12,6 +12,7 @@
 
 ![Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/Basic-Switch-Configuration/SW1.png?raw=true)
 
+[Download the Packet Tracer file](Basic-Switch-Configuration.pkt)
 
 ## 📋 Device Interface Table
 
