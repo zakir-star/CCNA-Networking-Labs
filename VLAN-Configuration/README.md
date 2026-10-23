@@ -64,7 +64,7 @@ Switch(config-if)# exit
 
 ```text
 Switch(config)# end
-Switch# copy running-config startup-config
+Switch# write memory
 ```
 
 ### PC IP Configuration
