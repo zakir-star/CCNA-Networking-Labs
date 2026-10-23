@@ -4,12 +4,12 @@
 
 - Create VLAN 10 named `IT` and VLAN 20 named `HR`.
 - Assign switch ports to the correct VLANs.
-- Configure IP addresses on PC1 and PC2.
-- Verify VLAN membership and understand communication between different VLANs.
+- Configure both PCs in the same IP subnet.
+- Verify VLAN membership and demonstrate that devices in different VLANs cannot communicate directly, even when their IP addresses belong to the same subnet.
 
 ## 🖼️ Lab Topology
 
-![VLAN Configuration Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/VLAN-Configuration/VLAN-Configuration.png.png?raw=true)
+![VLAN Configuration Topology](VLAN-Configuration.png)
 
 [Download the Packet Tracer file](VLAN-Configuration.pkt)
 
@@ -54,11 +54,11 @@ Switch# copy running-config startup-config
 
 ### PC IP Configuration
 
-Configure the following IPv4 addresses under **Desktop → IP Configuration** on each PC.
+Configure the following IPv4 addresses under **Desktop → IP Configuration** on each PC. Both PCs use the same subnet, `192.168.10.0/24`.
 
 | Setting | PC1 | PC2 |
 |---------|-----|-----|
-| IPv4 Address | `192.168.10.10` | `192.168.20.10` |
+| IPv4 Address | `192.168.10.10` | `192.168.10.20` |
 | Subnet Mask | `255.255.255.0` | `255.255.255.0` |
 | Default Gateway | Leave blank | Leave blank |
 | DNS Server | Leave blank | Leave blank |
@@ -74,9 +74,9 @@ Expected: VLAN 10 (`IT`) includes Fa0/1, and VLAN 20 (`HR`) includes Fa0/2.
 
 From PC1, open **Desktop → Command Prompt** and run:
 
-ping 192.168.20.10
+ping 192.168.10.20
 
-The ping should fail because PC1 and PC2 are in different VLANs and no router or Layer 3 switch is configured for inter-VLAN routing.
+The ping should fail. Although PC1 and PC2 are configured in the same IP subnet, they belong to separate VLANs. The switch does not forward their traffic directly between VLANs, and no inter-VLAN routing is configured in this lab.
 
 ## 🛠️ Troubleshooting
 
@@ -84,21 +84,22 @@ The ping should fail because PC1 and PC2 are in different VLANs and no router or
 |-------|-----|
 | VLAN does not appear | Check the VLAN creation commands and run `show vlan brief` |
 | Port appears in the wrong VLAN | Check the access VLAN assignment on the interface |
-| Ping fails between PC1 and PC2 | This is expected in this lab because inter-VLAN routing is not configured |
+| Ping fails between PC1 and PC2 | This is the expected result for this lab |
 | PC IP address is incorrect | Recheck the settings under Desktop → IP Configuration |
 
 ## 🌍 Real-World Use Case
 
-- VLANs logically separate devices into different broadcast domains.
+- VLANs logically separate devices into different Layer 2 broadcast domains.
 - Departments such as IT and HR can be placed in separate VLANs.
-- Inter-VLAN communication requires a router or Layer 3 switch.
+- Devices in different VLANs require appropriate Layer 3 routing to communicate; using addresses in the same IP subnet does not remove VLAN separation.
 
 ## 📌 Expected Result
 
 - ✅ VLAN 10 (`IT`) and VLAN 20 (`HR`) are created.
 - ✅ Fa0/1 is assigned to VLAN 10, and Fa0/2 is assigned to VLAN 20.
+- ✅ Both PCs have addresses in the same subnet: `192.168.10.0/24`.
 - ✅ `show vlan brief` confirms the VLAN membership.
-- ✅ PC1 cannot ping PC2 without inter-VLAN routing.
+- ✅ PC1 cannot ping PC2 because they are in different VLANs and inter-VLAN routing is not configured.
 
 ## 🙏 Acknowledgment
 
