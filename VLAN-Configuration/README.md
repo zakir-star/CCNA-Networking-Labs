@@ -26,46 +26,36 @@
 
 **Create VLAN 10 and name it IT**
 
-```text
-Switch> enable
-Switch# configure terminal
-Switch(config)# vlan 10
-Switch(config-vlan)# name IT
-Switch(config-vlan)# exit
-```
+`Switch> enable`  
+`Switch# configure terminal`  
+`Switch(config)# vlan 10`  
+`Switch(config-vlan)# name IT`  
+`Switch(config-vlan)# exit`
 
 **Create VLAN 20 and name it HR**
 
-```text
-Switch(config)# vlan 20
-Switch(config-vlan)# name HR
-Switch(config-vlan)# exit
-```
+`Switch(config)# vlan 20`  
+`Switch(config-vlan)# name HR`  
+`Switch(config-vlan)# exit`
 
 **Configure Fa0/1 as an access port in VLAN 10**
 
-```text
-Switch(config)# interface fa0/1
-Switch(config-if)# switchport mode access
-Switch(config-if)# switchport access vlan 10
-Switch(config-if)# exit
-```
+`Switch(config)# interface fa0/1`  
+`Switch(config-if)# switchport mode access`  
+`Switch(config-if)# switchport access vlan 10`  
+`Switch(config-if)# exit`
 
 **Configure Fa0/2 as an access port in VLAN 20**
 
-```text
-Switch(config)# interface fa0/2
-Switch(config-if)# switchport mode access
-Switch(config-if)# switchport access vlan 20
-Switch(config-if)# exit
-```
+`Switch(config)# interface fa0/2`  
+`Switch(config-if)# switchport mode access`  
+`Switch(config-if)# switchport access vlan 20`  
+`Switch(config-if)# exit`
 
 **Save the configuration**
 
-```text
-Switch(config)# end
-Switch# write memory
-```
+`Switch(config)# end`  
+`Switch# write memory`
 
 ### PC IP Configuration
 
@@ -82,9 +72,7 @@ Configure the following IPv4 addresses under **Desktop → IP Configuration** on
 
 **Verify VLANs and port assignments**
 
-```text
-SW1# show vlan brief
-```
+`SW1# show vlan brief`
 
 Expected: VLAN 10 (`IT`) includes Fa0/1, and VLAN 20 (`HR`) includes Fa0/2.
 
@@ -92,9 +80,7 @@ Expected: VLAN 10 (`IT`) includes Fa0/1, and VLAN 20 (`HR`) includes Fa0/2.
 
 From PC1, open **Desktop → Command Prompt** and run:
 
-```text
-ping 192.168.20.10
-```
+`ping 192.168.20.10`
 
 The ping should fail because PC1 and PC2 are in different VLANs and no router or Layer 3 switch is configured for inter-VLAN routing.
 
