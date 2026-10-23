@@ -9,7 +9,7 @@
 
 ## 🖼️ Lab Topology
 
-![VLAN Configuration Topology](VLAN-Configuration.png)
+![VLAN Configuration Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/VLAN-Configuration/VLAN-Configuration.png?raw=true)
 
 [Download the Packet Tracer file](VLAN-Configuration.pkt)
 
