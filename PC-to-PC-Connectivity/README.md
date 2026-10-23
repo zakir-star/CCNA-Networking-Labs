@@ -11,6 +11,8 @@
 
 ![Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/PC-to-PC-Connectivity/PC-to-PC-Connectivity.png?raw=true)
 
+[⬇️ Download the Packet Tracer file](https://github.com/zakir-star/CCNA-Networking-Labs/raw/refs/heads/main/PC-to-PC-Connectivity/PC-to-PC-Connectivity.pkt)
+
 ## 📋 Device Interface Table
 
 | Device | Interface | Connected To | Notes |
