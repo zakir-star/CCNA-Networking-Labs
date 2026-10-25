@@ -13,11 +13,11 @@ Each completed lab folder is intended to contain:
 ## 🗂 Grouped Lab Index
 
 ### 🔹 Network Fundamentals
-- [Access CLI Through Console](Access-CLI-Through-Console/README.md) — access R1's CLI from Laptop1 through a console cable.
+- [Basic Configuration](Basic-Configuration/README.md) — configure switch hostname, enable secret, and console password
+- [Access CLI Through Console](Access-CLI-Through-Console/README.md) — access R1's CLI from Laptop1 through a console cable
 - [PC-to-PC Connectivity](PC-to-PC-Connectivity/README.md) — static IPv4 addressing, subnet masks, and ping verification
 
 ### 🔹 Switching Labs
-- [Basic Switch Configuration](Basic-Switch-Configuration/README.md) — hostname, enable password, and console access
 - [VLAN Configuration](VLAN-Configuration/README.md) — create VLAN 10 (IT) and VLAN 20 (HR), assign access ports, and test VLAN separation
 - [VLAN Trunking](VLAN-Trunking/README.md) — carry VLAN 10 and VLAN 20 between SW1 and SW2 over a trunk link
 - **Next lab: Router on a Stick** — configure router subinterfaces to route between VLANs using the existing VLAN topology
