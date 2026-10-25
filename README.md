@@ -19,9 +19,17 @@ Each completed lab folder is intended to contain:
 - [Basic Switch Configuration](Basic-Switch-Configuration/README.md) — hostname, enable password, and console access
 - [VLAN Configuration](VLAN-Configuration/README.md) — create VLAN 10 (IT) and VLAN 20 (HR), assign access ports, and test VLAN separation
 - [VLAN Trunking](VLAN-Trunking/README.md) — carry VLAN 10 and VLAN 20 between SW1 and SW2 over a trunk link
+- **Next lab: Router on a Stick** — configure router subinterfaces to route between VLANs using the existing VLAN topology
+- Planned: Inter-VLAN Routing — routing between separate VLANs using a router or Layer 3 switch
+- Planned: Cisco Discovery Protocol (CDP)
+- Planned: Dynamic Trunking Protocol (DTP)
+- Planned: EtherChannel
+- Planned: Spanning Tree Protocol (STP)
+- Planned: PortFast
+- Planned: BPDU Guard
+- Planned: Switch Port Security
 
 ### 🔹 Routing Labs
-- **Next lab: Router on a Stick** — extend the existing VLAN trunking topology by adding only R1 and configuring router subinterfaces for inter-VLAN routing
 - Planned: Static Routing
 - Planned: Single-Area OSPF
 - Planned: Routing Table and Path Selection
