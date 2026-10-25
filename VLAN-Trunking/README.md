@@ -10,7 +10,7 @@
 
 ## 🖼️ Lab Topology
 
-![VLAN Trunking Topology](VLAN-Trunking.png)
+![VLAN Trunking Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/VLAN-Trunking/VLAN%20Trunking.png?raw=true)
 
 [⬇️ Download the Packet Tracer file](VLAN-Trunking.pkt)
 
