@@ -1,4 +1,4 @@
-# 🔀 Lab 3: VLAN Configuration
+# 🔀 Lab : VLAN Configuration
 
 ## 🎯 Objective
 
