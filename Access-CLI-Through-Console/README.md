@@ -36,7 +36,7 @@
 
 1. Open Cisco Packet Tracer.
 2. Add one router, one switch, and one laptop.
-3. Set the device names to **R1**, **SW1**, and **Laptop1**.
+3. Set the device names to **R1**, **SW1**.
 
 ### Step 2 — Connect the devices
 
