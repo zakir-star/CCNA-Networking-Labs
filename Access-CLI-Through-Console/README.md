@@ -16,6 +16,10 @@ Access router **R1's CLI** from **Laptop1** using a console cable, then configur
 
 ## 🗺️ Topology
 
+**📸Screenshot**
+
+![topology picture](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/Access-CLI-Through-Console/Access-CLI-Through-Console.png?raw=true)
+
 Build the topology with **one router (R1), one switch (SW1), and one laptop (Laptop1)**.
 
 - Connect **R1 GigabitEthernet0/0/0** to an Ethernet port on **SW1** using a copper straight-through cable.
@@ -71,10 +75,6 @@ show ip interface brief
 ```
 
 Confirm that `GigabitEthernet0/0/0` has IP address `192.168.1.1` and that its status changes to `up` when the Ethernet link to SW1 is active. The protocol should also show `up` when the connected Layer 2 link is operational.
-
-## 📸 Screenshot Checkpoints
-
-Save a Packet Tracer workspace screenshot showing R1, SW1, and Laptop1 with both the console and Ethernet connections. Also capture Laptop1's Terminal displaying the R1 CLI and the verification output.
 
 Suggested filenames:
 
