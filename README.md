@@ -13,7 +13,7 @@ Each completed lab folder is intended to contain:
 ## 🗂 Grouped Lab Index
 
 ### 🔹 Network Fundamentals
-- [Access CLI Through Console](Access-CLI-Through-Console/README.md) — access R1 from Laptop1 through a console cable and configure G0/0/0
+- [Access CLI Through Console](Access-CLI-Through-Console/README.md) — access R1's CLI from Laptop1 through a console cable and configure G0/0/0 with `192.168.1.1/24`
 - [PC-to-PC Connectivity](PC-to-PC-Connectivity/README.md) — static IPv4 addressing, subnet masks, and ping verification
 
 ### 🔹 Switching Labs
