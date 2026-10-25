@@ -16,8 +16,6 @@ Access router **R1's CLI** from **Laptop1** using a console cable, then configur
 
 ## 🗺️ Topology
 
-![topology_picture](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/Access-CLI-Through-Console/Access-CLI-Through-Console.png?raw=true)
-
 Build the topology with **one router (R1), one switch (SW1), and one laptop (Laptop1)**.
 
 - Connect **R1 GigabitEthernet0/0/0** to an Ethernet port on **SW1** using a copper straight-through cable.
