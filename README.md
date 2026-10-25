@@ -13,7 +13,7 @@ Each completed lab folder is intended to contain:
 ## 🗂 Grouped Lab Index
 
 ### 🔹 Network Fundamentals
-- [Switch Console Access](Switch-Console-Access/README.md) — access the switch CLI locally using a PC, RS-232 port, and console cable
+- [Access CLI Through Console](Access-CLI-Through-Console/README.md) — access R1 from Laptop1 through a console cable and configure G0/0/0
 - [PC-to-PC Connectivity](PC-to-PC-Connectivity/README.md) — static IPv4 addressing, subnet masks, and ping verification
 
 ### 🔹 Switching Labs
