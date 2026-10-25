@@ -70,10 +70,7 @@ Run `show ip interface brief` to verify the interface configuration.
 
 Confirm that `GigabitEthernet0/0/0` has IP address `192.168.1.1` and that its status changes to `up` when the Ethernet link to SW1 is active. The protocol should also show `up` when the connected Layer 2 link is operational.
 
-## 📥 Download Section
-
-- [⬇️ Download Packet Tracer Lab (.pkt)](Access-CLI-Through-Console.pkt)
-- [🖼️ View Topology Screenshot (.png)](Access-CLI-Through-Console.png)
+[⬇️ Download the Packet Tracer file](https://github.com/zakir-star/CCNA-Networking-Labs/raw/refs/heads/main/Access-CLI-Through-Console/Access-CLI-Through-Console.pkt)
 
 ## ✅ Expected Result
 
