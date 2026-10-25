@@ -1,10 +1,23 @@
 # CCNA-Networking-Labs
-Cisco CCNA Networking Labs – Packet Tracer topologies, configurations, and study materials
+
+Cisco CCNA Networking Labs — Packet Tracer topologies, configurations, and study materials.
 
 ## 📚 Labs
 
-- [Lab: VLAN Configuration](VLAN-Configuration/README.md)
-- [Lab: VLAN Trunking](VLAN-Trunking/README.md)
+### 1. [Lab: VLAN Configuration](VLAN-Configuration/README.md)
+- Create VLAN 10 (IT) and VLAN 20 (HR).
+- Assign switch access ports to the correct VLANs.
+- Verify VLAN membership and test Layer 2 separation.
+
+### 2. [Lab: VLAN Trunking](VLAN-Trunking/README.md)
+- Configure VLAN 10 (IT) and VLAN 20 (HR) across two switches.
+- Configure the trunk link between SW1 and SW2.
+- Allow only VLANs 10 and 20 across the trunk.
+- Verify trunk operation and same-VLAN connectivity across switches.
+
+## 🚀 Next Lab
+
+**Router on a Stick** — planned next, building on the VLAN Trunking lab by adding a router to demonstrate inter-VLAN routing.
 
 ## 📬 Contact
 
