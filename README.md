@@ -1,41 +1,54 @@
-# 🌐 CCNA Networking Labs
+# 📘 CCNA Networking Labs
 
-<p align="center">
-  <strong>Hands-on Cisco networking labs built with Cisco Packet Tracer</strong><br>
-  From network fundamentals to switching, routing, IP services, and network security.
-</p>
+A hands-on collection of **Cisco CCNA practical labs** built with Cisco Packet Tracer. Each completed lab documents the objective, topology, configuration, verification, and supporting files where available.
 
 <p align="center">
   <img alt="Cisco Packet Tracer" src="https://img.shields.io/badge/Platform-Cisco%20Packet%20Tracer-1BA0D7?style=for-the-badge">
   <img alt="Focus" src="https://img.shields.io/badge/Focus-CCNA%20Practical%20Labs-0A66C2?style=for-the-badge">
-  <img alt="Status" src="https://img.shields.io/badge/Progress-In%20Development-orange?style=for-the-badge">
 </p>
 
-## 👋 About This Repository
+---
 
-Welcome to my **CCNA Networking Labs** repository. This is my hands-on networking portfolio, documenting practical labs with topologies, configurations, verification steps, screenshots, and downloadable Packet Tracer files where available.
+## 🗂 Grouped Lab Index
 
-The repository follows a progressive learning path: build the fundamentals first, then develop switching and routing skills, and gradually expand into services, security, troubleshooting, and automation.
+### 🔹 Network Fundamentals
+- [01 — Network Fundamentals](01-Network-Fundamentals/README.md)
+- [PC-to-PC Connectivity](PC-to-PC-Connectivity/README.md) — static IPv4 addressing and ping verification
 
-## 🎯 Career Objective
+### 🔹 Switching & Network Access
+- [02 — Network Access](02-Network-Access/README.md)
+- [Basic Switch Configuration](Basic-Switch-Configuration/README.md)
+- [VLAN Configuration](VLAN-Configuration/README.md)
+- [VLAN Trunking](VLAN-Trunking/README.md)
 
-To strengthen my practical networking knowledge, build a reliable CCNA-level foundation, and document each lab as reproducible technical work.
+### 🔹 IP Connectivity & Routing
+- [03 — IP Connectivity](03-IP-Connectivity/README.md)
+- **Next lab:** Router on a Stick — extend our existing VLAN topology by adding R1 and configuring subinterfaces for inter-VLAN routing.
+- Planned: Static Routing, Single-Area OSPF, Routing Table and Path Selection
 
-## 🧠 Technical Skills Roadmap
+### 🔹 IP Services
+- [04 — IP Services](04-IP-Services/README.md)
+- Planned: DHCPv4, DNS, NAT/PAT, NTP, Syslog, SNMP
 
-| Learning Area | Topics |
-|---|---|
-| **Network Fundamentals** | IPv4/IPv6 addressing, subnetting, end-device configuration, connectivity testing |
-| **Network Access** | Switch setup, VLANs, access ports, trunking, STP, EtherChannel, WLAN concepts |
-| **IP Connectivity** | Router-on-a-stick, routing tables, static routes, OSPF, path selection |
-| **IP Services** | DHCP, DNS, NAT/PAT, NTP, Syslog, SNMP, QoS concepts |
-| **Security Fundamentals** | Device hardening, SSH, ACLs, port security, DHCP snooping, Dynamic ARP Inspection |
-| **Automation & Programmability** | JSON, REST APIs, controller-based networking, automation concepts |
-| **Troubleshooting** | Structured verification using connectivity tests and device show commands |
+### 🔹 Network Security
+- [05 — Security Fundamentals](05-Security-Fundamentals/README.md)
+- Planned: SSH, ACLs, port security, DHCP snooping, Dynamic ARP Inspection
+
+### 🔹 Automation & Programmability
+- [06 — Automation and Programmability](06-Automation-and-Programmability/README.md)
+- Planned: JSON, REST APIs, and network automation concepts
+
+### 🔹 Troubleshooting
+- [07 — Troubleshooting](07-Troubleshooting/README.md)
+- Planned: connectivity, VLAN, trunk, addressing, and routing troubleshooting
+
+### 🔹 Final Projects
+- [08 — Final Projects](08-Final-Projects/README.md)
+- Planned: integrated switching/routing topology and end-to-end verification
+
+---
 
 ## 📁 Repository Structure
-
-The learning roadmap is grouped into numbered CCNA topic areas. Existing lab folders are retained in their current locations during this initial makeover so that completed documentation, screenshots, topology images, and Packet Tracer files are not accidentally lost. The module indexes below provide a clear path through the labs.
 
 ```text
 CCNA-Networking-Labs/
@@ -47,93 +60,43 @@ CCNA-Networking-Labs/
 ├── 06-Automation-and-Programmability/
 ├── 07-Troubleshooting/
 ├── 08-Final-Projects/
-├── PC-to-PC-Connectivity/          # Existing completed lab
-├── Basic-Switch-Configuration/     # Existing completed lab
-├── VLAN-Configuration/             # Existing completed lab
-├── VLAN-Trunking/                  # Existing completed lab
+├── PC-to-PC-Connectivity/
+├── Basic-Switch-Configuration/
+├── VLAN-Configuration/
+├── VLAN-Trunking/
 └── README.md
 ```
 
-## 🧪 Learning Modules & Lab Progress
+The numbered folders are topic indexes. Completed lab folders are retained at their existing paths so their README links, screenshots, topology images, and Packet Tracer files continue to work.
 
-### 01 — Network Fundamentals
+## 🚀 How to Use
 
-| Lab | Topics | Status |
-|---|---|---|
-| [PC-to-PC Connectivity](PC-to-PC-Connectivity/README.md) | Static IPv4 addressing, subnet masks, and `ping` verification | ✅ Completed |
-| IPv4 Addressing & Subnetting | Network IDs, usable host ranges, broadcast addresses | 🔜 Planned |
-| IPv6 Addressing Basics | IPv6 formats, address types, and client configuration | 🔜 Planned |
+1. Open a topic index from the **Grouped Lab Index** above.
+2. Open a completed lab's README and follow the documented steps.
+3. Open its `.pkt` file in Cisco Packet Tracer when one is provided.
+4. Review screenshots and run the listed verification commands to reproduce the result.
 
-### 02 — Network Access
+## 📋 Prerequisites
 
-| Lab | Topics | Status |
-|---|---|---|
-| [Basic Switch Configuration](Basic-Switch-Configuration/README.md) | Hostname, enable password, console access | ✅ Completed |
-| [VLAN Configuration](VLAN-Configuration/README.md) | VLAN 10 (IT), VLAN 20 (HR), access-port assignment | ✅ Completed |
-| [VLAN Trunking](VLAN-Trunking/README.md) | Trunk between SW1 and SW2; allow VLANs 10 and 20 | ✅ Completed |
-| Spanning Tree Protocol (STP) | Root bridge and loop prevention | 🔜 Planned |
-| EtherChannel | Link aggregation and port-channel verification | 🔜 Planned |
-| Wireless LAN Fundamentals | WLAN components, SSIDs, and basic configuration | 🔜 Planned |
+- Cisco Packet Tracer installed
+- Basic familiarity with networking concepts and IP addressing
+- Willingness to configure, test, and troubleshoot network devices
 
-### 03 — IP Connectivity
+## 🧪 Lab Documentation Standard
 
-| Lab | Topics | Status |
-|---|---|---|
-| **Router on a Stick** | Add R1 to the existing VLAN topology; configure subinterfaces and inter-VLAN routing | 🚧 Next Lab |
-| Static Routing | IPv4 static and default routes | 🔜 Planned |
-| Single-Area OSPF | Neighbor relationships and route advertisement | 🔜 Planned |
-| Routing Table & Path Selection | Route sources and forwarding decisions | 🔜 Planned |
+Each lab is documented with the relevant items below:
 
-### 04 — IP Services
-
-- 🔜 DHCPv4 and address assignment
-- 🔜 DNS fundamentals and name resolution
-- 🔜 NAT and PAT
-- 🔜 NTP, Syslog, and SNMP
-- 🔜 QoS concepts and TFTP/FTP use cases
-
-### 05 — Security Fundamentals
-
-- 🔜 Secure device management with local users and SSH
-- 🔜 Standard and extended Access Control Lists (ACLs)
-- 🔜 Switch port security
-- 🔜 DHCP snooping and Dynamic ARP Inspection
-- 🔜 WLAN security fundamentals
-
-### 06 — Automation & Programmability
-
-- 🔜 Controller-based networking and APIs
-- 🔜 JSON and REST API fundamentals
-- 🔜 Network configuration and monitoring automation concepts
-
-### 07 — Troubleshooting
-
-- 🔜 Layer 1 and Layer 2 connectivity checks
-- 🔜 VLAN, trunk, and addressing fault isolation
-- 🔜 Routing and gateway troubleshooting
-- 🔜 Structured verification with `ping` and IOS `show` commands
-
-### 08 — Final Projects
-
-- 🔜 Integrated switching and routing topology
-- 🔜 End-to-end connectivity and verification
-- 🔜 Consolidated project documentation
+1. **Objective** — what the lab demonstrates.
+2. **Topology** — devices, links, and interfaces.
+3. **Configuration** — reproducible configuration steps.
+4. **Verification** — IOS show commands and connectivity tests.
+5. **Supporting files** — screenshots, topology diagrams, and `.pkt` files where available.
 
 ## 🛠️ Tools
 
-- **Cisco Packet Tracer** — building and testing network topologies
-- **Cisco IOS CLI** — configuring and verifying network devices
-- **GitHub** — version-controlled lab documentation and project files
-
-## 📋 Lab Documentation Standard
-
-Each lab aims to include the relevant items below:
-
-1. **Objective** — what the lab demonstrates.
-2. **Topology** — devices, links, and interface details.
-3. **Configuration** — clear, reproducible steps.
-4. **Verification** — appropriate show commands and connectivity tests.
-5. **Evidence and files** — screenshots, topology images, and Packet Tracer downloads when available.
+- Cisco Packet Tracer
+- Cisco IOS command-line interface (CLI)
+- GitHub for version-controlled documentation
 
 ## 📈 Current Progress
 
@@ -143,12 +106,24 @@ Each lab aims to include the relevant items below:
 - ✅ VLAN Trunking
 - 🚧 Router on a Stick — next lab
 
-> **Roadmap note:** This is a practical learning roadmap aligned with major CCNA subject areas. A topic is marked completed only after its lab has been built, tested, and documented.
+Upcoming topics are marked as planned and will be changed to completed only after the lab is built, tested, and documented.
 
-## 👨‍💻 Author
+## 👤 Author
 
 **Zakir Hussain**
 
-[![GitHub](https://img.shields.io/badge/GitHub-zakir--star-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zakir-star)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/zakir-hussain-18b998196)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:zh24074@gmail.com)
+- [GitHub Profile](https://github.com/zakir-star)
+- [LinkedIn](https://www.linkedin.com/in/zakir-hussain-18b998196)
+- [Email](mailto:zh24074@gmail.com)
+
+## 🙌 Acknowledgments
+
+Thanks to Cisco Networking Academy, the networking community, and open learning resources that support hands-on CCNA practice.
+
+## 📜 License
+
+No license has been added to this repository yet. Reuse and redistribution permissions will be clarified if a license is added.
+
+## 🤝 Contributions
+
+Suggestions and corrections are welcome. Please open an issue or pull request with a clear description of the proposed improvement.
