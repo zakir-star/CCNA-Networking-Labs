@@ -28,10 +28,13 @@ Each completed lab folder is intended to contain:
 - Planned: PortFast
 - Planned: BPDU Guard
 - Planned: Switch Port Security
+- Planned: VLAN Trunking Protocol (VTP)
 
 ### 🔹 Routing Labs
 - Planned: Static Routing
-- Planned: Single-Area OSPF
+- Planned: Routing Information Protocol (RIP)
+- Planned: Enhanced Interior Gateway Routing Protocol (EIGRP)
+- Planned: Open Shortest Path First (OSPF)
 - Planned: Routing Table and Path Selection
 
 ### 🔹 IP Services
