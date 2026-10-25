@@ -55,31 +55,25 @@ Build the topology with **one router (R1), one switch (SW1), and one laptop (Lap
 
 ### Step 4 — Configure the router interface
 
-Enter the following commands in R1's CLI:
+Enter these commands in R1's CLI, one line at a time:
 
-```text
-enable
-configure terminal
-interface gigabitEthernet 0/0/0
-ip address 192.168.1.1 255.255.255.0
-no shutdown
-end
-```
+1. `enable`
+2. `configure terminal`
+3. `interface gigabitEthernet 0/0/0`
+4. `ip address 192.168.1.1 255.255.255.0`
+5. `no shutdown`
+6. `end`
 
 ### Step 5 — Verify the configuration
 
-Run:
-
-```text
-show ip interface brief
-```
+Run `show ip interface brief` to verify the interface configuration.
 
 Confirm that `GigabitEthernet0/0/0` has IP address `192.168.1.1` and that its status changes to `up` when the Ethernet link to SW1 is active. The protocol should also show `up` when the connected Layer 2 link is operational.
 
-Suggested filenames:
+## 📥 Download Section
 
-- `Access-CLI-Through-Console.pkt`
-- `Access-CLI-Through-Console.png`
+- [⬇️ Download Packet Tracer Lab (.pkt)](Access-CLI-Through-Console.pkt)
+- [🖼️ View Topology Screenshot (.png)](Access-CLI-Through-Console.png)
 
 ## ✅ Expected Result
 
