@@ -94,8 +94,7 @@ Thanks to Cisco Networking Academy and the networking community for learning res
 
 ## 📜 License
 
-No license has been added to this repository yet. Add a license file if you want to define explicit reuse and redistribution permissions.
-
+No license has been added to this repository yet.
 ## 🤝 Contributions
 
 Suggestions and corrections are welcome. Please open an issue or pull request describing the proposed improvement.
