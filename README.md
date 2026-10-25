@@ -80,16 +80,6 @@ Each lab documents the relevant steps for that exercise:
 - Cisco IOS command-line interface (CLI)
 - GitHub for lab documentation and version control
 
-## 📈 Current Progress
-
-- ✅ PC-to-PC Connectivity
-- ✅ Basic Switch Configuration
-- ✅ VLAN Configuration
-- ✅ VLAN Trunking
-- 🚧 Router on a Stick — next lab
-
-Only labs that have been performed, verified, and documented are marked completed.
-
 ## 👤 Author
 
 **Zakir Hussain**
