@@ -48,10 +48,6 @@ Each completed lab folder is intended to contain:
 - Planned: Switch Port Security
 - Planned: DHCP Snooping and Dynamic ARP Inspection
 
-### 🔹 Final Projects
-- Planned: Integrated switching and routing topology
-- Planned: End-to-end connectivity verification
-
 ---
 
 ## 🚀 How to Use
