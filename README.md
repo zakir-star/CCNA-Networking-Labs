@@ -35,7 +35,6 @@ Each completed lab folder is intended to contain:
 - Planned: Routing Information Protocol (RIP)
 - Planned: Enhanced Interior Gateway Routing Protocol (EIGRP)
 - Planned: Open Shortest Path First (OSPF)
-- Planned: Routing Table and Path Selection
 
 ### 🔹 IP Services
 - Planned: DHCPv4
@@ -49,8 +48,7 @@ Each completed lab folder is intended to contain:
 - Planned: Switch Port Security
 - Planned: DHCP Snooping and Dynamic ARP Inspection
 
-### 🔹 Troubleshooting & Final Projects
-- Planned: VLAN, trunk, addressing, and routing troubleshooting
+### 🔹 Final Projects
 - Planned: Integrated switching and routing topology
 - Planned: End-to-end connectivity verification
 
