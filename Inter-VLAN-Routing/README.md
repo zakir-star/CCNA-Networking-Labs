@@ -1,4 +1,4 @@
-# 🌐 Lab: Inter-VLAN Routing Using a Layer 3 Switch
+# 🔀 Lab: Inter-VLAN Routing Using a Layer 3 Switch
 
 ## 🎯 Objective
 - Configure VLAN 10 (`IT`) and VLAN 20 (`HR`) on SW1 and SW2.
