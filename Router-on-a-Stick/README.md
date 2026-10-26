@@ -10,9 +10,9 @@
 
 ## 🗺️ Lab Topology
 
-The topology contains SW1 and SW2 connected by a trunk link, four PCs connected to access ports, and router R1 connected to SW2 Fa0/4. R1 provides inter-VLAN routing for VLAN 10 and VLAN 20. The topology image will be added here once it is ready.
+The topology contains SW1 and SW2 connected by a trunk link, four PCs connected to access ports, and router R1 connected to SW2 Fa0/4. R1 provides inter-VLAN routing for VLAN 10 and VLAN 20.
 
-<!-- Add the topology image here: ![Router-on-a-Stick Topology](Router-on-a-Stick.png) -->
+![Router-on-a-Stick Topology](Router-on-a-Stick.png)
 
 [⬇️ Download the Packet Tracer file](https://github.com/zakir-star/CCNA-Networking-Labs/raw/refs/heads/main/Router-on-a-Stick/Router-on-a-Stick.pkt)
 
