@@ -2,7 +2,7 @@
 
 ## 🎯 Objective
 
-- Reuse the existing VLAN Trunking topology with SW1, SW2, PC1, PC2, PC3, and PC4.
+- Build a network with two switches, four PCs, and router R1.
 - Configure VLAN 10 (`IT`), VLAN 20 (`HR`), access ports, and both trunk links from scratch.
 - Add router R1 and configure an 802.1Q trunk between R1 and SW2.
 - Configure router subinterfaces to provide a default gateway for each VLAN.
@@ -10,7 +10,7 @@
 
 ## 🖼️ Lab Topology
 
-The topology will retain the previous VLAN Trunking layout and add R1 connected to SW2 Fa0/4. The final topology image will be added here once it is ready.
+The topology contains SW1 and SW2 connected by a trunk link, four PCs connected to access ports, and router R1 connected to SW2 Fa0/4. R1 provides inter-VLAN routing for VLAN 10 and VLAN 20. The topology image will be added here once it is ready.
 
 <!-- Add the topology image here: ![Router-on-a-Stick Topology](Router-on-a-Stick.png) -->
 
@@ -46,7 +46,7 @@ The topology will retain the previous VLAN Trunking layout and add R1 connected 
 
 ### Step 1: Create VLANs on Both Switches
 
-Start with the existing physical topology, but configure the switch settings from scratch. On **both SW1 and SW2**, create VLAN 10 for IT and VLAN 20 for HR.
+On **both SW1 and SW2**, create VLAN 10 for IT and VLAN 20 for HR.
 
 Switch> enable  
 Switch# configure terminal  
@@ -154,7 +154,7 @@ Router(config)# end
 
 ### Step 6: Configure PC IP Addresses and Default Gateways
 
-Open **Desktop → IP Configuration** on each PC and configure the following values:
+Open **Desktop → IP Configuration** on each PC and configure the following IP address, subnet mask, and default gateway:
 
 - PC1 (VLAN 10): IP `192.168.10.2`, mask `255.255.255.0`, gateway `192.168.10.1`.
 - PC3 (VLAN 10): IP `192.168.10.3`, mask `255.255.255.0`, gateway `192.168.10.1`.
@@ -225,10 +225,10 @@ Expected: both tests succeed. Traffic between VLAN 10 and VLAN 20 is routed thro
 
 ## 📌 Expected Result
 
-- ✅ The existing SW1, SW2, and four-PC topology is preserved.
+- ✅ SW1, SW2, four PCs, and R1 are connected according to the topology.
 - ✅ VLAN 10 (`IT`) and VLAN 20 (`HR`) are created from scratch on both switches.
 - ✅ PC access ports and both trunk links are configured from scratch.
-- ✅ The SW1 Fa0/3 ↔ SW2 Fa0/3 trunk continues carrying VLANs 10 and 20.
+- ✅ The SW1 Fa0/3 ↔ SW2 Fa0/3 trunk carries VLANs 10 and 20.
 - ✅ R1 is connected to SW2 Fa0/4 using an 802.1Q trunk.
 - ✅ R1 subinterfaces provide the default gateways for both VLANs.
 - ✅ PCs in the same VLAN can communicate across the two switches.
@@ -236,7 +236,7 @@ Expected: both tests succeed. Traffic between VLAN 10 and VLAN 20 is routed thro
 
 ## 🙏 Acknowledgment
 
-This lab builds on my previous VLAN Trunking lab and is part of my CCNA practice series. Thank you for taking the time to review it.
+This lab demonstrates how to configure Router-on-a-Stick inter-VLAN routing using Cisco Packet Tracer. Thank you for taking the time to review it.
 
 ## ✍️ Author's Note
 
