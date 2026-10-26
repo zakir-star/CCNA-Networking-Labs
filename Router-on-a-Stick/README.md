@@ -3,7 +3,7 @@
 ## 🎯 Objective
 
 - Build a network with two switches, four PCs, and router R1.
-- Configure VLAN 10 (`IT`), VLAN 20 (`HR`), access ports, and both trunk links from scratch.
+- Configure VLAN 10 (`IT`), VLAN 20 (`HR`), access ports, and both trunk links on SW1 and SW2.
 - Add router R1 and configure an 802.1Q trunk between R1 and SW2.
 - Configure router subinterfaces to provide a default gateway for each VLAN.
 - Verify same-VLAN and inter-VLAN connectivity using ping tests.
@@ -225,9 +225,7 @@ Expected: both tests succeed. Traffic between VLAN 10 and VLAN 20 is routed thro
 
 ## 📌 Expected Result
 
-- ✅ SW1, SW2, four PCs, and R1 are connected according to the topology.
-- ✅ VLAN 10 (`IT`) and VLAN 20 (`HR`) are created from scratch on both switches.
-- ✅ PC access ports and both trunk links are configured from scratch.
+- ✅ VLAN 10 (`IT`) and VLAN 20 (`HR`) are created on both switches.
 - ✅ The SW1 Fa0/3 ↔ SW2 Fa0/3 trunk carries VLANs 10 and 20.
 - ✅ R1 is connected to SW2 Fa0/4 using an 802.1Q trunk.
 - ✅ R1 subinterfaces provide the default gateways for both VLANs.
