@@ -3,7 +3,7 @@
 ## 🎯 Objective
 
 - Reuse the existing VLAN Trunking topology with SW1, SW2, PC1, PC2, PC3, and PC4.
-- Preserve VLAN 10 (`IT`), VLAN 20 (`HR`), and the SW1–SW2 trunk on Fa0/3.
+- Configure VLAN 10 (`IT`), VLAN 20 (`HR`), access ports, and both trunk links from scratch.
 - Add router R1 and configure an 802.1Q trunk between R1 and SW2.
 - Configure router subinterfaces to provide a default gateway for each VLAN.
 - Verify same-VLAN and inter-VLAN connectivity using ping tests.
@@ -44,19 +44,78 @@ The topology will retain the previous VLAN Trunking layout and add R1 connected 
 
 ## ⚙️ Configuration
 
-### Step 1: Confirm the Existing VLANs and Switch-to-Switch Trunk
+### Step 1: Create VLANs on Both Switches
 
-On both SW1 and SW2, verify that VLAN 10 (`IT`) and VLAN 20 (`HR`) already exist and Fa0/3 is trunking.
+Start with the existing physical topology, but configure the switch settings from scratch. On **both SW1 and SW2**, create VLAN 10 for IT and VLAN 20 for HR.
+
+Switch> enable  
+Switch# configure terminal  
+Switch(config)# vlan 10  
+Switch(config-vlan)# name IT  
+Switch(config-vlan)# exit  
+Switch(config)# vlan 20  
+Switch(config-vlan)# name HR  
+Switch(config-vlan)# end
+
+Verify on each switch:
 
 show vlan brief
 
+Expected: VLAN 10 named IT and VLAN 20 named HR appear on both switches.
+
+### Step 2: Assign the PC Access Ports
+
+Configure the PC-facing ports on each switch. On SW1, Fa0/1 connects to PC1 in VLAN 10 and Fa0/2 connects to PC2 in VLAN 20. On SW2, Fa0/1 connects to PC3 in VLAN 10 and Fa0/2 connects to PC4 in VLAN 20.
+
+Apply the relevant commands on **SW1**:
+
+Switch> enable  
+Switch# configure terminal  
+Switch(config)# interface fa0/1  
+Switch(config-if)# switchport mode access  
+Switch(config-if)# switchport access vlan 10  
+Switch(config-if)# exit  
+Switch(config)# interface fa0/2  
+Switch(config-if)# switchport mode access  
+Switch(config-if)# switchport access vlan 20  
+Switch(config-if)# end
+
+Apply the equivalent port configuration on **SW2**:
+
+Switch> enable  
+Switch# configure terminal  
+Switch(config)# interface fa0/1  
+Switch(config-if)# switchport mode access  
+Switch(config-if)# switchport access vlan 10  
+Switch(config-if)# exit  
+Switch(config)# interface fa0/2  
+Switch(config-if)# switchport mode access  
+Switch(config-if)# switchport access vlan 20  
+Switch(config-if)# end
+
+Verify on both switches with `show vlan brief`. Expected: Fa0/1 is assigned to VLAN 10 and Fa0/2 to VLAN 20.
+
+### Step 3: Configure the SW1–SW2 Trunk
+
+The inter-switch connection is **SW1 Fa0/3 ↔ SW2 Fa0/3**. Configure Fa0/3 as a trunk on **both switches**, allowing VLANs 10 and 20.
+
+Switch> enable  
+Switch# configure terminal  
+Switch(config)# interface fa0/3  
+Switch(config-if)# switchport mode trunk  
+Switch(config-if)# switchport trunk allowed vlan 10,20  
+Switch(config-if)# no shutdown  
+Switch(config-if)# end
+
+Run these commands on **both SW1 and SW2**, then verify with:
+
 show interfaces trunk
 
-Expected: VLAN 10 and VLAN 20 exist on both switches. The SW1 Fa0/3 ↔ SW2 Fa0/3 trunk allows VLANs 10 and 20.
+Expected: the SW1 Fa0/3 ↔ SW2 Fa0/3 link is trunking VLANs 10 and 20.
 
-### Step 2: Configure the SW2 Port Connected to R1
+### Step 4: Configure the SW2 Port Connected to R1
 
-Connect **SW2 Fa0/4** to **R1 G0/0/0**. On SW2, configure Fa0/4 as a trunk and allow only VLANs 10 and 20.
+Connect **SW2 Fa0/4** to **R1 G0/0/0**. On SW2, configure Fa0/4 as a trunk and allow VLANs 10 and 20.
 
 Switch> enable  
 Switch# configure terminal  
@@ -66,13 +125,9 @@ Switch(config-if)# switchport trunk allowed vlan 10,20
 Switch(config-if)# no shutdown  
 Switch(config-if)# end
 
-Verify the trunk:
+Verify with `show interfaces trunk`. Expected: SW2 Fa0/4 is operating as a trunk and VLANs 10 and 20 are allowed.
 
-show interfaces trunk
-
-Expected: SW2 Fa0/4 is operating as a trunk and VLANs 10 and 20 are allowed. Keep the existing SW1 Fa0/3 ↔ SW2 Fa0/3 trunk unchanged.
-
-### Step 3: Configure Router R1 Subinterfaces
+### Step 5: Configure Router R1 Subinterfaces
 
 On R1, enable the physical interface connected to SW2 and create one subinterface for each VLAN.
 
@@ -97,14 +152,16 @@ Router(config-subif)# ip address 192.168.20.1 255.255.255.0
 Router(config-subif)# exit  
 Router(config)# end
 
-### Step 4: Configure PC Default Gateways
+### Step 6: Configure PC IP Addresses and Default Gateways
 
-Open **Desktop → IP Configuration** on each PC. Preserve the IP addresses and subnet masks from the VLAN Trunking lab, and set the gateways as follows:
+Open **Desktop → IP Configuration** on each PC and configure the following values:
 
-- PC1 and PC3 (VLAN 10): `192.168.10.1`
-- PC2 and PC4 (VLAN 20): `192.168.20.1`
+- PC1 (VLAN 10): IP `192.168.10.2`, mask `255.255.255.0`, gateway `192.168.10.1`.
+- PC3 (VLAN 10): IP `192.168.10.3`, mask `255.255.255.0`, gateway `192.168.10.1`.
+- PC2 (VLAN 20): IP `192.168.20.2`, mask `255.255.255.0`, gateway `192.168.20.1`.
+- PC4 (VLAN 20): IP `192.168.20.3`, mask `255.255.255.0`, gateway `192.168.20.1`.
 
-### Step 5: Verify Router Interfaces
+### Step 7: Verify Router Interfaces
 
 On R1, run:
 
@@ -114,7 +171,7 @@ show running-config
 
 Expected: the physical interface is enabled, and subinterfaces G0/0/0.10 and G0/0/0.20 have their configured IP addresses. After the links come up, the subinterfaces should show an operational status.
 
-### Step 6: Verify Switch Trunks
+### Step 8: Verify Switch Trunks and VLAN Assignments
 
 On SW1 and SW2, run:
 
@@ -125,7 +182,7 @@ Expected:
 - SW2 Fa0/4 trunks VLANs 10 and 20 toward R1.
 - SW2 Fa0/3 trunks VLANs 10 and 20 toward SW1.
 
-### Step 7: Test Same-VLAN Connectivity
+### Step 9: Test Same-VLAN Connectivity
 
 From PC1, ping PC3:
 
@@ -137,7 +194,7 @@ ping 192.168.20.3
 
 Expected: both tests succeed because each pair belongs to the same VLAN and IP subnet.
 
-### Step 8: Test Inter-VLAN Connectivity
+### Step 10: Test Inter-VLAN Connectivity
 
 From PC1, ping PC2:
 
@@ -154,7 +211,7 @@ Expected: both tests succeed. Traffic between VLAN 10 and VLAN 20 is routed thro
 | Issue | Fix |
 |-------|-----|
 | Router subinterfaces are down | Check that the physical router interface is enabled with `no shutdown`, and verify the cable and connected switch port. |
-| VLAN 10 or VLAN 20 is missing | Verify both VLANs exist on SW1 and SW2 using `show vlan brief`. |
+| VLAN 10 or VLAN 20 is missing | Create VLAN 10 and VLAN 20 on both switches and verify with `show vlan brief`. |
 | SW1–SW2 connectivity fails | Check the Fa0/3 trunk on both switches and allow VLANs 10 and 20. |
 | R1 cannot route between VLANs | Verify `encapsulation dot1Q 10` and `encapsulation dot1Q 20`, the subinterface IP addresses, and the SW2 Fa0/4 trunk. |
 | Same-VLAN ping fails | Verify PC IP addresses, subnet masks, access-port assignments, VLAN membership, and the SW1–SW2 trunk. |
@@ -169,7 +226,8 @@ Expected: both tests succeed. Traffic between VLAN 10 and VLAN 20 is routed thro
 ## 📌 Expected Result
 
 - ✅ The existing SW1, SW2, and four-PC topology is preserved.
-- ✅ VLAN 10 (`IT`) and VLAN 20 (`HR`) remain configured on both switches.
+- ✅ VLAN 10 (`IT`) and VLAN 20 (`HR`) are created from scratch on both switches.
+- ✅ PC access ports and both trunk links are configured from scratch.
 - ✅ The SW1 Fa0/3 ↔ SW2 Fa0/3 trunk continues carrying VLANs 10 and 20.
 - ✅ R1 is connected to SW2 Fa0/4 using an 802.1Q trunk.
 - ✅ R1 subinterfaces provide the default gateways for both VLANs.
