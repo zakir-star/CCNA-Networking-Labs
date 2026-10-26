@@ -53,22 +53,18 @@ Create VLAN 10 for IT and VLAN 20 for HR on both switches.
 
 On **SW1** and **SW2**, run:
 
-```text
-enable
-configure terminal
-vlan 10
- name IT
-exit
-vlan 20
- name HR
-end
-```
+enable  
+configure terminal  
+vlan 10  
+ name IT  
+exit  
+vlan 20  
+ name HR  
+end  
 
 Verify:
 
-```text
-show vlan brief
-```
+show vlan brief  
 
 Expected: VLAN 10 (IT) and VLAN 20 (HR) appear on both switches.
 
@@ -76,31 +72,27 @@ Expected: VLAN 10 (IT) and VLAN 20 (HR) appear on both switches.
 
 On **SW1**, assign PC1 to VLAN 10 and PC2 to VLAN 20:
 
-```text
-configure terminal
-interface fa0/1
- switchport mode access
- switchport access vlan 10
-exit
-interface fa0/2
- switchport mode access
- switchport access vlan 20
-end
-```
+configure terminal  
+interface fa0/1  
+ switchport mode access  
+ switchport access vlan 10  
+exit  
+interface fa0/2  
+ switchport mode access  
+ switchport access vlan 20  
+end  
 
 On **SW2**, assign PC3 to VLAN 10 and PC4 to VLAN 20:
 
-```text
-configure terminal
-interface fa0/1
- switchport mode access
- switchport access vlan 10
-exit
-interface fa0/2
- switchport mode access
- switchport access vlan 20
-end
-```
+configure terminal  
+interface fa0/1  
+ switchport mode access  
+ switchport access vlan 10  
+exit  
+interface fa0/2  
+ switchport mode access  
+ switchport access vlan 20  
+end  
 
 Verify on both switches with `show vlan brief`.
 
@@ -110,20 +102,16 @@ Configure Fa0/3 as a trunk on both switches, allowing VLANs 10 and 20.
 
 On **SW1** and **SW2**:
 
-```text
-configure terminal
-interface fa0/3
- switchport mode trunk
- switchport trunk allowed vlan 10,20
- no shutdown
-end
-```
+configure terminal  
+interface fa0/3  
+ switchport mode trunk  
+ switchport trunk allowed vlan 10,20  
+ no shutdown  
+end  
 
 Verify:
 
-```text
-show interfaces trunk
-```
+show interfaces trunk  
 
 Expected: SW1 Fa0/3 and SW2 Fa0/3 form a trunk carrying VLANs 10 and 20.
 
@@ -131,27 +119,23 @@ Expected: SW1 Fa0/3 and SW2 Fa0/3 form a trunk carrying VLANs 10 and 20.
 
 On the Catalyst 3560-24PS, configure an SVI for each VLAN and enable Layer 3 routing.
 
-```text
-configure terminal
-ip routing
-interface vlan 10
- ip address 192.168.10.1 255.255.255.0
- no shutdown
-exit
-interface vlan 20
- ip address 192.168.20.1 255.255.255.0
- no shutdown
-end
-```
+configure terminal  
+ip routing  
+interface vlan 10  
+ ip address 192.168.10.1 255.255.255.0  
+ no shutdown  
+exit  
+interface vlan 20  
+ ip address 192.168.20.1 255.255.255.0  
+ no shutdown  
+end  
 
 The SVIs become operational when the VLAN exists and at least one port in that VLAN is active and forwarding.
 
 Verify:
 
-```text
-show ip interface brief
-show ip route
-```
+show ip interface brief  
+show ip route  
 
 Expected: VLAN 10 and VLAN 20 SVIs have their configured addresses, and SW2 has connected routes for both VLAN subnets when the SVIs are up.
 
@@ -161,31 +145,25 @@ This connection is **not a trunk**. Convert SW2 Fa0/4 into a Layer 3 routed port
 
 On **SW2**:
 
-```text
-configure terminal
-interface fa0/4
- no switchport
- ip address 10.0.0.2 255.255.255.252
- no shutdown
-end
-```
+configure terminal  
+interface fa0/4  
+ no switchport  
+ ip address 10.0.0.2 255.255.255.252  
+ no shutdown  
+end  
 
 On **R1**, configure G0/0/0:
 
-```text
-enable
-configure terminal
-interface gigabitEthernet0/0/0
- ip address 10.0.0.1 255.255.255.252
- no shutdown
-end
-```
+enable  
+configure terminal  
+interface gigabitEthernet0/0/0  
+ ip address 10.0.0.1 255.255.255.252  
+ no shutdown  
+end  
 
 Verify on both devices:
 
-```text
-show ip interface brief
-```
+show ip interface brief  
 
 Expected: SW2 Fa0/4 and R1 G0/0/0 are up/up after the link comes up.
 
@@ -195,17 +173,13 @@ Point SW2's default route toward R1's transit IP address.
 
 On **SW2**:
 
-```text
-configure terminal
-ip route 0.0.0.0 0.0.0.0 10.0.0.1
-end
-```
+configure terminal  
+ip route 0.0.0.0 0.0.0.0 10.0.0.1  
+end  
 
 Verify:
 
-```text
-show ip route
-```
+show ip route  
 
 Expected: SW2 has a static default route using next hop 10.0.0.1.
 
@@ -213,18 +187,14 @@ Expected: SW2 has a static default route using next hop 10.0.0.1.
 
 On **R1**, create Loopback0 with address 1.1.1.1/32.
 
-```text
-configure terminal
-interface loopback0
- ip address 1.1.1.1 255.255.255.255
-end
-```
+configure terminal  
+interface loopback0  
+ ip address 1.1.1.1 255.255.255.255  
+end  
 
 Verify:
 
-```text
-show ip interface brief
-```
+show ip interface brief  
 
 Expected: Loopback0 is up/up with IP address 1.1.1.1.
 
@@ -234,18 +204,14 @@ R1 needs routes back to both VLAN subnets through SW2's transit address.
 
 On **R1**:
 
-```text
-configure terminal
-ip route 192.168.10.0 255.255.255.0 10.0.0.2
-ip route 192.168.20.0 255.255.255.0 10.0.0.2
-end
-```
+configure terminal  
+ip route 192.168.10.0 255.255.255.0 10.0.0.2  
+ip route 192.168.20.0 255.255.255.0 10.0.0.2  
+end  
 
 Verify:
 
-```text
-show ip route
-```
+show ip route  
 
 Expected: R1 has static routes to 192.168.10.0/24 and 192.168.20.0/24 via 10.0.0.2.
 
@@ -262,33 +228,23 @@ Open **Desktop → IP Configuration** on each PC and configure:
 
 From PC1, test same-VLAN connectivity to PC3:
 
-```text
-ping 192.168.10.3
-```
+ping 192.168.10.3  
 
 From PC2, test same-VLAN connectivity to PC4:
 
-```text
-ping 192.168.20.3
-```
+ping 192.168.20.3  
 
 From PC1, test inter-VLAN connectivity to PC2:
 
-```text
-ping 192.168.20.2
-```
+ping 192.168.20.2  
 
 From PC4, test inter-VLAN connectivity to PC3:
 
-```text
-ping 192.168.10.3
-```
+ping 192.168.10.3  
 
 Finally, from a PC in either VLAN, test reachability to R1's loopback:
 
-```text
-ping 1.1.1.1
-```
+ping 1.1.1.1  
 
 Expected: all tests succeed after the VLANs, trunks, SVIs, routed link, and routes are configured correctly.
 
