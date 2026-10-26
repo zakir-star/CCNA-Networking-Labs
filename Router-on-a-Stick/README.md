@@ -29,8 +29,6 @@ The topology contains SW1 and SW2 connected by a trunk link, four PCs connected 
 | R1 | G0/0/0.10 | VLAN 10 | Gateway: 192.168.10.1/24 |
 | R1 | G0/0/0.20 | VLAN 20 | Gateway: 192.168.20.1/24 |
 
-> If your router model uses a different interface name, replace `G0/0/0` consistently in the commands below.
-
 ## 🧭 IP Addressing Table
 
 | Device | VLAN | IPv4 Address | Subnet Mask | Default Gateway |
