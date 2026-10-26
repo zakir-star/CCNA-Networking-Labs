@@ -14,6 +14,8 @@ The topology contains SW1 and SW2 connected by a trunk link, four PCs connected 
 
 <!-- Add the topology image here: ![Router-on-a-Stick Topology](Router-on-a-Stick.png) -->
 
+[📥 Download the Packet Tracer file](Router-on-a-Stick.pkt)
+
 ## 🔌 Device Interface Table
 
 | Device | Interface | Connected To | VLAN / Mode |
