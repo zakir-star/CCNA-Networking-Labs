@@ -14,7 +14,7 @@ The topology contains SW1 and SW2 connected by a trunk link, four PCs connected 
 
 <!-- Add the topology image here: ![Router-on-a-Stick Topology](Router-on-a-Stick.png) -->
 
-[⬇️ Download the Packet Tracer file](Router-on-a-Stick.pkt)
+[⬇️ Download the Packet Tracer file](https://github.com/zakir-star/CCNA-Networking-Labs/raw/refs/heads/main/Router-on-a-Stick/Router-on-a-Stick.pkt)
 
 ## 🔌 Device Interface Table
 
