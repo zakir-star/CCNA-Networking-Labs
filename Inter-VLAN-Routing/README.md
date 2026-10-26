@@ -15,6 +15,8 @@ Reuse the four-PC layout and the SW1–SW2 trunk from the previous lab. SW1 rema
 
 VLAN 10 and VLAN 20 gateways are configured on SW2's SVIs. R1 provides upstream routing and the loopback test destination.
 
+[⬇️ Download the Packet Tracer file](https://github.com/zakir-star/CCNA-Networking-Labs/raw/refs/heads/main/Inter-VLAN-Routing/Inter-VLAN-Routing.pkt)
+
 ## 🔌 Device Interface Table
 
 | Device | Interface | Connected To | VLAN / Mode |
