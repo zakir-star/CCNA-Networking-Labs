@@ -21,7 +21,7 @@ Each completed lab folder is intended to contain:
 - [VLAN Configuration](VLAN-Configuration/README.md) — create VLAN 10 (IT) and VLAN 20 (HR), assign access ports, and test VLAN separation
 - [VLAN Trunking](VLAN-Trunking/README.md) — carry VLAN 10 and VLAN 20 between SW1 and SW2 over a trunk link
 - [Router on a Stick](Router-on-a-Stick/README.md) — Configure router subinterfaces for inter-VLAN routing
-- Planned: Inter-VLAN Routing — routing between separate VLANs using a router or Layer 3 switch
+- [Inter-VLAN Routing](Inter-VLAN-Routing/README.md) — route between VLAN 10 and VLAN 20 using a Catalyst 3560-24PS Layer 3 switch, SVIs, and static routes
 - Planned: Cisco Discovery Protocol (CDP)
 - Planned: Dynamic Trunking Protocol (DTP)
 - Planned: EtherChannel
