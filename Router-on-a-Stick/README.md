@@ -1,4 +1,4 @@
-# 🔀 Lab: Router-on-a-Stick
+# 🌐 Lab: Router-on-a-Stick
 
 ## 🎯 Objective
 
@@ -8,13 +8,13 @@
 - Configure router subinterfaces to provide a default gateway for each VLAN.
 - Verify same-VLAN and inter-VLAN connectivity using ping tests.
 
-## 🖼️ Lab Topology
+## 🗺️ Lab Topology
 
 The topology contains SW1 and SW2 connected by a trunk link, four PCs connected to access ports, and router R1 connected to SW2 Fa0/4. R1 provides inter-VLAN routing for VLAN 10 and VLAN 20. The topology image will be added here once it is ready.
 
 <!-- Add the topology image here: ![Router-on-a-Stick Topology](Router-on-a-Stick.png) -->
 
-## 📋 Device Interface Table
+## 🔌 Device Interface Table
 
 | Device | Interface | Connected To | VLAN / Mode |
 |--------|-----------|--------------|-------------|
@@ -29,7 +29,7 @@ The topology contains SW1 and SW2 connected by a trunk link, four PCs connected 
 | R1 | G0/0/0.10 | VLAN 10 | Gateway: 192.168.10.1/24 |
 | R1 | G0/0/0.20 | VLAN 20 | Gateway: 192.168.20.1/24 |
 
-## 🧭 IP Addressing Table
+## 🖧 IP Addressing Table
 
 | Device | VLAN | IPv4 Address | Subnet Mask | Default Gateway |
 |--------|------|--------------|-------------|-----------------|
@@ -40,7 +40,7 @@ The topology contains SW1 and SW2 connected by a trunk link, four PCs connected 
 | R1 G0/0/0.10 | VLAN 10 — IT | `192.168.10.1` | `255.255.255.0` | — |
 | R1 G0/0/0.20 | VLAN 20 — HR | `192.168.20.1` | `255.255.255.0` | — |
 
-## ⚙️ Configuration
+## 🛠️ Configuration
 
 ### Step 1: Create VLANs on Both Switches
 
@@ -204,7 +204,7 @@ ping 192.168.10.3
 
 Expected: both tests succeed. Traffic between VLAN 10 and VLAN 20 is routed through R1's subinterfaces.
 
-## 🛠️ Troubleshooting
+## 🔧 Troubleshooting
 
 | Issue | Fix |
 |-------|-----|
@@ -215,7 +215,7 @@ Expected: both tests succeed. Traffic between VLAN 10 and VLAN 20 is routed thro
 | Same-VLAN ping fails | Verify PC IP addresses, subnet masks, access-port assignments, VLAN membership, and the SW1–SW2 trunk. |
 | Inter-VLAN ping fails | Verify each PC's default gateway and confirm both router subinterfaces are operational. |
 
-## 🌍 Real-World Use Case
+## 🏢 Real-World Use Case
 
 - Router-on-a-Stick allows one physical router interface to route traffic for multiple VLANs using 802.1Q tagging.
 - Separate VLANs can remain distinct broadcast domains while communicating through a Layer 3 device.
