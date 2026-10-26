@@ -1,8 +1,6 @@
 # 🌐 Lab: Inter-VLAN Routing Using a Layer 3 Switch
 
 ## 🎯 Objective
-
-- Replace the Layer 2 SW2 from the previous VLAN Trunking / Router-on-a-Stick topology with a Cisco Catalyst 3560-24PS multilayer switch.
 - Configure VLAN 10 (`IT`) and VLAN 20 (`HR`) on SW1 and SW2.
 - Configure Switch Virtual Interfaces (SVIs) on SW2 to provide the default gateways for both VLANs.
 - Enable Layer 3 routing on SW2 and use a routed link between SW2 and R1.
