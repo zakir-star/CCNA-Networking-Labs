@@ -9,7 +9,7 @@
 
 ## 🗺️ Lab Topology
 
-![image alt]()
+![image alt](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/Inter-VLAN-Routing/Inter-VLAN-Routing.png?raw=true)
 
 VLAN 10 and VLAN 20 gateways are configured on SW2's SVIs. R1 provides upstream routing and the loopback test destination.
 
