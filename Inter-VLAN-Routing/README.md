@@ -9,7 +9,7 @@
 
 ## 🗺️ Lab Topology
 
-Reuse the four-PC layout and the SW1–SW2 trunk from the previous lab. SW1 remains a Layer 2 switch. Replace the previous Layer 2 SW2 with a **Cisco Catalyst 3560-24PS multilayer switch**. Connect SW2 Fa0/4 to R1 G0/0/0, but configure this connection as a **routed Layer 3 link**, not a trunk.
+![image alt]()
 
 VLAN 10 and VLAN 20 gateways are configured on SW2's SVIs. R1 provides upstream routing and the loopback test destination.
 
