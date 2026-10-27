@@ -92,9 +92,6 @@ Each lab documents the relevant steps for that exercise:
 
 Thanks to Cisco Networking Academy and the networking community for learning resources and practical inspiration.
 
-## 📜 License
-
-No license has been added to this repository yet.
 ## 🤝 Contributions
 
 Suggestions and corrections are welcome. Please open an issue or pull request describing the proposed improvement.
