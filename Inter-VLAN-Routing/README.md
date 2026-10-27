@@ -35,10 +35,10 @@ VLAN 10 and VLAN 20 gateways are configured on SW2's SVIs. R1 provides upstream 
 
 | Device | VLAN / Interface | IPv4 Address | Subnet Mask | Default Gateway / Next Hop |
 |--------|------------------|--------------|-------------|-----------------------------|
-| PC1 | VLAN 10 — IT | `192.168.10.2` | `255.255.255.0` | `192.168.10.1` |
-| PC3 | VLAN 10 — IT | `192.168.10.3` | `255.255.255.0` | `192.168.10.1` |
-| PC2 | VLAN 20 — HR | `192.168.20.2` | `255.255.255.0` | `192.168.20.1` |
-| PC4 | VLAN 20 — HR | `192.168.20.3` | `255.255.255.0` | `192.168.20.1` |
+| PC1 | VLAN 10 — IT | `192.168.10.10` | `255.255.255.0` | `192.168.10.1` |
+| PC3 | VLAN 10 — IT | `192.168.10.11` | `255.255.255.0` | `192.168.10.1` |
+| PC2 | VLAN 20 — HR | `192.168.20.10` | `255.255.255.0` | `192.168.20.1` |
+| PC4 | VLAN 20 — HR | `192.168.20.11` | `255.255.255.0` | `192.168.20.1` |
 | SW2 | VLAN 10 SVI | `192.168.10.1` | `255.255.255.0` | — |
 | SW2 | VLAN 20 SVI | `192.168.20.1` | `255.255.255.0` | — |
 | SW2 | Fa0/4 routed port | `10.0.0.2` | `255.255.255.252` | R1: `10.0.0.1` |
@@ -219,28 +219,28 @@ Expected: R1 has static routes to 192.168.10.0/24 and 192.168.20.0/24 via 10.0.0
 
 Open **Desktop → IP Configuration** on each PC and configure:
 
-- PC1 (VLAN 10): IP `192.168.10.2`, mask `255.255.255.0`, gateway `192.168.10.1`.
-- PC3 (VLAN 10): IP `192.168.10.3`, mask `255.255.255.0`, gateway `192.168.10.1`.
-- PC2 (VLAN 20): IP `192.168.20.2`, mask `255.255.255.0`, gateway `192.168.20.1`.
-- PC4 (VLAN 20): IP `192.168.20.3`, mask `255.255.255.0`, gateway `192.168.20.1`.
+- PC1 (VLAN 10): IP `192.168.10.10`, mask `255.255.255.0`, gateway `192.168.10.1`.
+- PC3 (VLAN 10): IP `192.168.10.11`, mask `255.255.255.0`, gateway `192.168.10.1`.
+- PC2 (VLAN 20): IP `192.168.20.10`, mask `255.255.255.0`, gateway `192.168.20.1`.
+- PC4 (VLAN 20): IP `192.168.20.11`, mask `255.255.255.0`, gateway `192.168.20.1`.
 
 ### Step 10: Verify Connectivity
 
 From PC1, test same-VLAN connectivity to PC3:
 
-ping 192.168.10.3  
+ping 192.168.10.11  
 
 From PC2, test same-VLAN connectivity to PC4:
 
-ping 192.168.20.3  
+ping 192.168.20.11  
 
 From PC1, test inter-VLAN connectivity to PC2:
 
-ping 192.168.20.2  
+ping 192.168.20.10  
 
 From PC4, test inter-VLAN connectivity to PC3:
 
-ping 192.168.10.3  
+ping 192.168.10.11  
 
 Finally, from a PC in either VLAN, test reachability to R1's loopback:
 
