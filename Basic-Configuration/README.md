@@ -10,7 +10,7 @@
 
 ## 🖼️ Lab Topology
 
-![Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/Basic-Configuration/SW1.png?raw=true)
+![Topology](https://github.com/zakir-star/CCNA-Networking-Labs/blob/main/Basic-Configuration/Basic-Configuration.png?raw=true)
 
 [⬇️ Download the Packet Tracer file](https://github.com/zakir-star/CCNA-Networking-Labs/raw/refs/heads/main/Basic-Configuration/Basic-Configuration.pkt)
 
